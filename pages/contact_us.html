@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us | Haro Wonchi Hotel</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Luxury Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Icons (not Bootstrap) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Site stylesheet -->
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="luxury-navbar">
+    <div class="container nav-inner">
+        <a class="navbar-brand-luxury" href="../pages/contact_us.html">
+            <div class="logo-container">
+                <img src="asset/images/SPACE.JPG" width="50" height="65" alt="Haro Wonchi Icon" class="logo-img">
+                <div class="logo-text">
+                    <h1 class="hotel-name">Haro Wonchi</h1>
+                    <p class="hotel-tagline">Come and feel like home!</p>
+                </div>
+            </div>
+        </a>
+
+        <button class="navbar-toggler" id="navToggle" type="button" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="navbar-collapse" id="navbarNav">
+            <ul class="luxury-nav">
+                <li><a class="nav-link" href="../pages/home.html">Home</a></li>
+                <li><a class="nav-link" href="../pages/about.html">About</a></li>
+                <li><a class="nav-link" href="../pages/photogallery.html">Gallery</a></li>
+                <li><a class="nav-link" href="../pages/testimonials.html">Testimonials</a></li>
+                <li><a class="nav-link" href="../pages/Locations.html">Locations</a></li>
+                <li><a class="nav-link" href="../pages/contact_us.html">Contact</a></li>
+            </ul>
+            <div class="user-section">
+                <a href="login.html" class="auth-btn"><i class="fas fa-sign-in-alt"></i> Login</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="contact-hero">
+    <div class="contact-hero-content">
+        <h1>Get In Touch</h1>
+        <p>We'd Love To Hear From You</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="breadcrumb">
+        <ol class="breadcrumb-list">
+            <li><a href="../pages/home.html">Home</a></li>
+            <li class="active">Contact</li>
+        </ol>
+    </nav>
+
+    <!-- Contact Content -->
+    <div class="contact-container">
+
+        <!-- Contact Form -->
+        <div class="contact-form-section">
+            <h2 class="section-title">Send Us A Message</h2>
+
+            <div id="formMessage" class="form-message" hidden></div>
+
+            <form id="contactForm" novalidate>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="cfname" class="form-label"><i class="fas fa-user"></i> Full Name</label>
+                        <input type="text" id="cfname" name="cfname" class="form-control" placeholder="Enter your full name" required>
+                        <div class="error-message" data-error-for="cfname"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cemail" class="form-label"><i class="fas fa-envelope"></i> Email Address</label>
+                        <input type="email" id="cemail" name="cemail" class="form-control" placeholder="Enter your email address" required>
+                        <div class="error-message" data-error-for="cemail"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cphone" class="form-label"><i class="fas fa-phone"></i> Phone Number</label>
+                        <input type="tel" id="cphone" name="cphone" class="form-control" placeholder="Enter your phone number">
+                        <div class="error-message" data-error-for="cphone"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="csubject" class="form-label"><i class="fas fa-tag"></i> Subject</label>
+                        <input type="text" id="csubject" name="csubject" class="form-control" placeholder="What is this regarding?" required>
+                        <div class="error-message" data-error-for="csubject"></div>
+                    </div>
+
+                    <div class="form-group form-group-full">
+                        <label for="cmessage" class="form-label"><i class="fas fa-comment-dots"></i> Message</label>
+                        <textarea id="cmessage" name="cmessage" class="form-control" rows="6" placeholder="Write your message here..." required></textarea>
+                        <div class="error-message" data-error-for="cmessage"></div>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" name="send" class="btn-luxury">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                    <button type="reset" class="btn-luxury-outline">
+                        <i class="fas fa-redo"></i> Clear Form
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info-section">
+            <h2 class="section-title">Contact Information</h2>
+
+            <div class="contact-detail-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h5>Address</h5>
+                    <p>Haro Wonchi Hotel, Woliso, Ethiopia</p>
+                </div>
+            </div>
+
+            <div class="contact-detail-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h5>Phone</h5>
+                    <p>+251 123 456 789</p>
+                </div>
+            </div>
+
+            <div class="contact-detail-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h5>Email</h5>
+                    <p>info@harowonchihotel.com</p>
+                </div>
+            </div>
+
+            <div class="contact-detail-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <h5>Front Desk Hours</h5>
+                    <p>Open 24 hours, every day</p>
+                </div>
+            </div>
+
+            <div class="contact-social">
+                <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="luxury-footer">
+    <div class="footer-content">
+        <div class="social-links">
+            <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <div class="footer-contact">
+            <div class="contact-info">
+                <div class="contact-item"><i class="fas fa-phone contact-icon"></i><span>+251 123 456 789</span></div>
+                <div class="contact-item"><i class="fas fa-envelope contact-icon"></i><span>info@harowonchihotel.com</span></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt contact-icon"></i><span>shaggar, Ethiopia</span></div>
+            </div>
+        </div>
+
+        <nav class="footer-nav">
+            <div class="footer-nav-item"><a href="../pages/home.html" class="footer-nav-link">Home</a></div>
+            <div class="footer-nav-item"><a href="../pages/about.html" class="footer-nav-link">About our Hotel</a></div>
+            <div class="footer-nav-item"><a href="../pages/photogallery.html" class="footer-nav-link">Photogallery</a></div>
+            <div class="footer-nav-item"><a href="../pages/testimonials.html" class="footer-nav-link">Testimonials</a></div>
+            <div class="footer-nav-item"><a href="../pages/Locations.html" class="footer-nav-link">Locations</a></div>
+            <div class="footer-nav-item"><a href="../pages/contact_us.html" class="footer-nav-link">Contacts</a></div>
+        </nav>
+
+        <div class="footer-copyright">
+            <div class="footer-divider"></div>
+            <p class="copyright-text">Haro Wonchi Hotel, Burayu, Ethiopia</p>
+            <p class="copyright-year">&copy; <span id="year"></span> - Luxury Redefined</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

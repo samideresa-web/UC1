@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>System Admin | Haro Wonchi Hotel</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Luxury Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Icons (not Bootstrap) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Site stylesheet -->
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="luxury-navbar">
+    <div class="container nav-inner">
+        <a class="navbar-brand-luxury" href="../home.html">
+            <div class="logo-container">
+                <img src="assets/images/SPACE.JPG" width="50" height="65" alt="Haro Wonchi Icon" class="logo-img">
+                <div class="logo-text">
+                    <h1 class="hotel-name">Haro Wonchi</h1>
+                    <p class="hotel-tagline">Come and feel like home!</p>
+                </div>
+            </div>
+        </a>
+
+        <button class="navbar-toggler" id="navToggle" type="button" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="navbar-collapse" id="navbarNav">
+            <ul class="luxury-nav">
+                <li><a class="nav-link" href="../pages/home.html">Home</a></li>
+                <li><a class="nav-link" href="../pages/about.html">About</a></li>
+                <li><a class="nav-link" href="../pages/photogallery.html">Gallery</a></li>
+                <li><a class="nav-link" href="../pages/testimonial.html">Testimonials</a></li>
+                <li><a class="nav-link" href="../pages/Locations.html">Locations</a></li>
+                <li><a class="nav-link" href="../pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="user-section">
+                <p class="welcome-text">Welcome, <span class="user-name">admin</span> <span class="user-role">Admin</span></p>
+                <a href="../pages/photogallery.html./index.html?logged=out" class="auth-btn" onclick="return confirm('Are you sure you want to logout?');">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ============================================================ -->
+<!--  AUTHENTICATED VIEW (simulated system admin logged in)       -->
+<!--  To see the login form, comment out this block and uncomment  -->
+<!--  the "UNAUTHENTICATED VIEW" block below.                     -->
+<!-- ============================================================ -->
+
+<!-- AUTHENTICATED SYSTEM ADMIN VIEW -->
+<div class="dashboard-hero">
+    <div class="dashboard-hero-content">
+        <h1>System Administrator</h1>
+        <p>Manage Hotel Operations with Precision and Excellence</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="breadcrumb">
+        <ol class="breadcrumb-list">
+            <li><a href="../pages/photogallery.html/home.html">Home</a></li>
+            <li class="active">System Administrator</li>
+        </ol>
+    </nav>
+
+    <div class="dashboard-container">
+        <!-- MAIN -->
+        <div class="dashboard-main">
+            <h2 class="section-title">Hotel Management System</h2>
+
+            <!-- Stats -->
+            <div class="system-stats">
+                <div class="stats-title"><i class="fas fa-chart-line"></i>System Overview</div>
+                <div class="stats-grid">
+                    <div class="stat-item"><div class="stat-number">24</div><div class="stat-label">Total Rooms</div></div>
+                    <div class="stat-item"><div class="stat-number">18</div><div class="stat-label">Active Bookings</div></div>
+                    <div class="stat-item"><div class="stat-number">12</div><div class="stat-label">Staff Members</div></div>
+                    <div class="stat-item"><div class="stat-number">96%</div><div class="stat-label">System Uptime</div></div>
+                </div>
+            </div>
+
+            <!-- Room Management -->
+            <h3 class="dashboard-subtitle">Room Management</h3>
+            <div class="dashboard-grid">
+                <a href="./add_room.html" class="dashboard-card">
+                    <div class="card-icon"><i class="fas fa-plus"></i></div>
+                    <h3 class="card-title">Add Room</h3>
+                    <p class="card-description">Add new rooms with detailed specifications</p>
+                </a>
+                <a href="./delete_room.html" class="dashboard-card">
+                    <div class="card-icon"><i class="fas fa-trash"></i></div>
+                    <h3 class="card-title">Delete Room</h3>
+                    <p class="card-description">Remove rooms from inventory</p>
+                </a>
+                <a href="./update_room.html" class="dashboard-card">
+                    <div class="card-icon"><i class="fas fa-edit"></i></div>
+                    <h3 class="card-title">Update Room</h3>
+                    <p class="card-description">Modify room details and pricing</p>
+                </a>
+            </div>
+
+            <!-- Employee Management -->
+            <h3 class="dashboard-subtitle">Employee Management</h3>
+            <div class="dashboard-grid">
+                <a href="./add_employee.html" class="dashboard-card">
+                    <div class="card-icon"><i class="fas fa-user-plus"></i></div>
+                    <h3 class="card-title">Add Employee</h3>
+                    <p class="card-description">Register new staff members and assign roles</p>
+                </a>
+                <a href="./update_employee.html" class="dashboard-card">
+                    <div class="card-icon"><i class="fas fa-user-edit"></i></div>
+                    <h3 class="card-title">Update Employee</h3>
+                    <p class="card-description">Modify employee information and access</p>
+                </a>
+                <a href="./terminate_employee.html" class="dashboard-card">
+                    <div class="card-icon"><i class="fas fa-user-times"></i></div>
+                    <h3 class="card-title">Terminate Employee</h3>
+                    <p class="card-description">Manage employee termination and access</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="dashboard-sidebar">
+            <div class="staff-profile">
+                <div class="profile-image"><i class="fas fa-user-cog"></i></div>
+                <h4 class="profile-name">admin</h4>
+                <p class="profile-role">System Administrator</p>
+                <p class="profile-position">Haro Wonchi Hotel</p>
+            </div>
+            <div class="sidebar-note">
+                <h4>Welcome, admin</h4>
+                <p>You have full system access to manage all hotel operations.</p>
+            </div>
+            <div class="dashboard-quick-actions">
+                <h5 class="actions-title">Quick Actions</h5>
+                <div class="action-item">
+                    <div class="action-icon"><i class="fas fa-user-clock"></i></div>
+                    <div class="action-text">Last login: Jul 2, 2026 2:30 PM</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slogan -->
+    <div class="slogan-banner">
+        <p>Come And Feel Like Home</p>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!--  UNAUTHENTICATED VIEW (login form)                           -->
+<!--  To show the login form instead, comment out the AUTHENTICATED -->
+<!--  block above and uncomment the block below.                  -->
+<!-- ============================================================ -->
+<!--
+<div class="dashboard-hero">
+    <div class="dashboard-hero-content">
+        <h1>System Administrator</h1>
+        <p>Authorized Access Only</p>
+    </div>
+</div>
+<div class="container">
+    <div class="dashboard-container" style="grid-template-columns:1fr; max-width:600px; margin:30px auto;">
+        <div class="staff-login-section">
+            <h2 class="section-title">System Administrator Login</h2>
+            <div class="form-message error">
+                <i class="fas fa-exclamation-circle"></i> Sorry, wrong username or password
+            </div>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="username" class="form-label"><i class="fas fa-user"></i>Username</label>
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" required />
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label"><i class="fas fa-lock"></i>Password</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required />
+                </div>
+                <button type="submit" name="login" class="login-btn"><i class="fas fa-sign-in-alt"></i> Login</button>
+            </form>
+            <div class="register-link">
+                <p class="register-text">Need system administrator access?</p>
+                <p style="font-size:0.9rem; color:var(--text-muted);">Please contact the hotel management for access credentials.</p>
+            </div>
+        </div>
+        <div class="dashboard-sidebar" style="margin-top:20px;">
+            <div class="unauthorized-section">
+                <div class="unauthorized-icon"><i class="fas fa-lock"></i></div>
+                <h3 class="unauthorized-title">Access Restricted</h3>
+                <p class="unauthorized-text">This area is reserved for authorized system administrators only. Please login with your credentials.</p>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+<!-- ================= FOOTER ================= -->
+<footer class="luxury-footer">
+    <div class="footer-content">
+        <div class="social-links">
+            <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <div class="footer-contact">
+            <div class="contact-info">
+                <div class="contact-item"><i class="fas fa-phone contact-icon"></i><span>+251 123 456 789</span></div>
+                <div class="contact-item"><i class="fas fa-envelope contact-icon"></i><span>info@harowonchihotel.com</span></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt contact-icon"></i><span>Woliso, Ethiopia</span></div>
+            </div>
+        </div>
+
+        <nav class="footer-nav">
+            <div class="footer-nav-item"><a href="../pages/photogallery.html/home.html" class="footer-nav-link">Home</a></div>
+            <div class="footer-nav-item"><a href="../pages/photogallery.html/about.html" class="footer-nav-link">About our Hotel</a></div>
+            <div class="footer-nav-item"><a href="../pages/photogallery.html" class="footer-nav-link">Photogallery</a></div>
+            <div class="footer-nav-item"><a href="../pages/photogallery.html/testimonial.html" class="footer-nav-link">Testimonials</a></div>
+            <div class="footer-nav-item"><a href="../pages/Locations.html" class="footer-nav-link">Locations</a></div>
+            <div class="footer-nav-item"><a href="../pages/photogallery.html/contact.html" class="footer-nav-link">Contacts</a></div>
+        </nav>
+
+        <div class="footer-copyright">
+            <div class="footer-divider"></div>
+            <p class="copyright-text">Haro Wonchi Hotel, Woliso, Ethiopia</p>
+            <p class="copyright-year">&copy; <span id="year"></span> - Luxury Redefined</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

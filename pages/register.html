@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Create Account | Haro Wonchi Hotel</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Luxury Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Icons (not Bootstrap) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Site stylesheet -->
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="luxury-navbar">
+    <div class="container nav-inner">
+        <a class="navbar-brand-luxury" href="./home.html">
+            <div class="logo-container">
+                <img src="assets/images/SPACE.JPG" width="50" height="65" alt="Haro Wonchi Icon" class="logo-img">
+                <div class="logo-text">
+                    <h1 class="hotel-name">Haro Wonchi</h1>
+                    <p class="hotel-tagline">Come and feel like home!</p>
+                </div>
+            </div>
+        </a>
+
+        <button class="navbar-toggler" id="navToggle" type="button" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="navbar-collapse" id="navbarNav">
+            <ul class="luxury-nav">
+                <li><a class="nav-link" href="./home.html">Home</a></li>
+                <li><a class="nav-link" href="./about.html">About</a></li>
+                <li><a class="nav-link" href="../pages/photogallery.html">Gallery</a></li>
+                <li><a class="nav-link" href="../pages/testimonials.html">Testimonials</a></li>
+                <li><a class="nav-link" href="../pages/Locations.html">Locations</a></li>
+                <li><a class="nav-link" href="../pages/contact_us.html">Contact</a></li>
+            </ul>
+            <div class="user-section">
+                <a href="login.html" class="auth-btn"><i class="fas fa-sign-in-alt"></i> Login</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="register-hero">
+    <div class="register-hero-content">
+        <h1>Join Our Family</h1>
+        <p>Create your Haro Wonchi Hotel account</p>
+    </div>
+</div>
+
+<div class="register-container">
+    <div class="register-card">
+        <h2 class="register-title">Create Account</h2>
+        <p class="register-subtitle">Fill in your details to get started</p>
+
+        <div id="formMessage" class="form-message" hidden></div>
+
+        <form id="registerForm" novalidate>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="full_name" class="form-label required">
+                        <i class="fas fa-user"></i> Full Name
+                    </label>
+                    <input type="text" id="full_name" name="full_name" class="form-control" placeholder="Enter your full name" required>
+                    <div class="error-message" data-error-for="full_name"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="username" class="form-label required">
+                        <i class="fas fa-at"></i> Username
+                    </label>
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Choose a username" required>
+                    <div class="error-message" data-error-for="username"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="form-label required">
+                    <i class="fas fa-envelope"></i> Email Address
+                </label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address" required>
+                <div class="error-message" data-error-for="email"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone" class="form-label">
+                    <i class="fas fa-phone"></i> Phone Number
+                </label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="Optional phone number">
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="password" class="form-label required">
+                        <i class="fas fa-lock"></i> Password
+                    </label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Create a password" required minlength="6">
+                    <div class="password-requirements">
+                        <div class="requirement" id="lengthReq">
+                            <i class="fas fa-circle"></i>
+                            At least 6 characters
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm_password" class="form-label required">
+                        <i class="fas fa-lock"></i> Confirm Password
+                    </label>
+                    <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="Confirm your password" required>
+                    <div id="passwordMatch" class="password-match-msg"></div>
+                </div>
+            </div>
+
+            <button type="submit" name="register" class="register-btn" id="registerButton">
+                <i class="fas fa-user-plus me-2"></i>Create Account
+            </button>
+        </form>
+
+        <div class="login-link">
+            <p class="login-text">Already have an account?</p>
+            <a href="login.html" class="login-btn">
+                <i class="fas fa-sign-in-alt me-2"></i>Sign In
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="luxury-footer">
+    <div class="footer-content">
+        <div class="social-links">
+            <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <div class="footer-contact">
+            <div class="contact-info">
+                <div class="contact-item"><i class="fas fa-phone contact-icon"></i><span>+251 123 456 789</span></div>
+                <div class="contact-item"><i class="fas fa-envelope contact-icon"></i><span>info@harowonchihotel.com</span></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt contact-icon"></i><span>Woliso, Ethiopia</span></div>
+            </div>
+        </div>
+
+        <nav class="footer-nav">
+            <div class="footer-nav-item"><a href="./home.html" class="footer-nav-link">Home</a></div>
+            <div class="footer-nav-item"><a href="./about.html" class="footer-nav-link">About our Hotel</a></div>
+            <div class="footer-nav-item"><a href="../pages/photogallery.html" class="footer-nav-link">Photogallery</a></div>
+            <div class="footer-nav-item"><a href="../pages/testimonials.html" class="footer-nav-link">Testimonials</a></div>
+            <div class="footer-nav-item"><a href="../pages/Locations.html" class="footer-nav-link">Locations</a></div>
+            <div class="footer-nav-item"><a href="../pages/contact_us.html" class="footer-nav-link">Contacts</a></div>
+        </nav>
+
+        <div class="footer-copyright">
+            <div class="footer-divider"></div>
+            <p class="copyright-text">Haro Wonchi Hotel, Woliso, Ethiopia</p>
+            <p class="copyright-year">&copy; <span id="year"></span> - Luxury Redefined</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../jav.js"></script>
+<script>
+    // ==========================================================
+    // Create Account — frontend-only simulation. No backend, so
+    // this validates the fields the same way the PHP version did
+    // (required fields, password length, matching passwords,
+    // valid email) and shows a success message in the shared
+    // #formMessage style. A real deployment would POST this to
+    // the server-side registration handler.
+    // ==========================================================
+    document.addEventListener('DOMContentLoaded', function () {
+        var form = document.getElementById('registerForm');
+        var formMessage = document.getElementById('formMessage');
+        var passwordInput = document.getElementById('password');
+        var confirmInput = document.getElementById('confirm_password');
+        var lengthReq = document.getElementById('lengthReq');
+        var passwordMatch = document.getElementById('passwordMatch');
+        var registerButton = document.getElementById('registerButton');
+
+        function fieldError(name, text) {
+            var el = document.querySelector('[data-error-for="' + name + '"]');
+            if (el) el.textContent = text || '';
+        }
+
+        function clearFieldErrors() {
+            document.querySelectorAll('.error-message').forEach(function (el) {
+                el.textContent = '';
+            });
+        }
+
+        function showMessage(type, text) {
+            formMessage.textContent = text;
+            formMessage.className = 'form-message ' + type;
+            formMessage.hidden = false;
+        }
+
+        function checkPasswordLength() {
+            var valid = passwordInput.value.length >= 6;
+            lengthReq.classList.toggle('valid', valid);
+            lengthReq.querySelector('i').className = valid ? 'fas fa-check-circle' : 'fas fa-circle';
+            return valid;
+        }
+
+        function checkPasswordsMatch() {
+            if (!confirmInput.value) {
+                passwordMatch.textContent = '';
+                passwordMatch.className = 'password-match-msg';
+                return false;
+            }
+            var match = passwordInput.value === confirmInput.value;
+            passwordMatch.textContent = match ? 'Passwords match' : 'Passwords do not match';
+            passwordMatch.className = 'password-match-msg ' + (match ? 'match' : 'no-match');
+            return match;
+        }
+
+        passwordInput.addEventListener('input', function () {
+            checkPasswordLength();
+            checkPasswordsMatch();
+        });
+        confirmInput.addEventListener('input', checkPasswordsMatch);
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            clearFieldErrors();
+            formMessage.hidden = true;
+
+            var fullName = document.getElementById('full_name').value.trim();
+            var username = document.getElementById('username').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var password = passwordInput.value;
+            var confirmPassword = confirmInput.value;
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            var hasError = false;
+
+            if (!fullName) { fieldError('full_name', 'Full name is required'); hasError = true; }
+            if (!username) { fieldError('username', 'Username is required'); hasError = true; }
+            if (!email) {
+                fieldError('email', 'Email is required');
+                hasError = true;
+            } else if (!emailPattern.test(email)) {
+                fieldError('email', 'Please enter a valid email address');
+                hasError = true;
+            }
+            if (!password || !confirmPassword) { hasError = true; }
+
+            if (!checkPasswordLength()) { hasError = true; }
+            if (!checkPasswordsMatch()) { hasError = true; }
+
+            if (hasError) {
+                showMessage('error', 'Please fix the highlighted fields and try again.');
+                return;
+            }
+
+            registerButton.disabled = true;
+            showMessage('success', 'Registration successful! You can now login to your account.');
+            form.reset();
+            lengthReq.classList.remove('valid');
+            lengthReq.querySelector('i').className = 'fas fa-circle';
+            passwordMatch.textContent = '';
+            passwordMatch.className = 'password-match-msg';
+            setTimeout(function () { registerButton.disabled = false; }, 1200);
+        });
+    });
+</script>
+</body>
+</html>

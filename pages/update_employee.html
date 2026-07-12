@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Update Employee | Haro Wonchi Hotel</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Luxury Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Icons (not Bootstrap) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Site stylesheet -->
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="luxury-navbar">
+    <div class="container nav-inner">
+        <a class="navbar-brand-luxury" href="./home.html">
+            <div class="logo-container">
+                <img src="assets/images/SPACE.JPG" width="50" height="65" alt="Haro Wonchi Icon" class="logo-img">
+                <div class="logo-text">
+                    <h1 class="hotel-name">Haro Wonchi</h1>
+                    <p class="hotel-tagline">Come and feel like home!</p>
+                </div>
+            </div>
+        </a>
+
+        <button class="navbar-toggler" id="navToggle" type="button" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="navbar-collapse" id="navbarNav">
+            <ul class="luxury-nav">
+                <li><a class="nav-link" href="./home.html">Home</a></li>
+                <li><a class="nav-link" href="./about.html">About</a></li>
+                <li><a class="nav-link" href="../pages/photogallery.html">Gallery</a></li>
+                <li><a class="nav-link" href="../pages/testimonials.html">Testimonials</a></li>
+                <li><a class="nav-link" href="../pages/Locations.html">Locations</a></li>
+                <li><a class="nav-link" href="../pages/contact_us.html">Contact</a></li>
+            </ul>
+            <div class="user-section">
+                <p class="welcome-text">Welcome, <span class="user-name">admin</span> <span class="user-role">Admin</span></p>
+                <a href="./home.html?logged=out" class="auth-btn" onclick="return confirm('Are you sure you want to logout?');">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="admin-hero">
+    <div class="admin-hero-content">
+        <h1>Update Employee</h1>
+        <p>Modify Employee Information and Access</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="breadcrumb">
+        <ol class="breadcrumb-list">
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./systemadmi.html">System Admin</a></li>
+            <li class="active">Update Employee</li>
+        </ol>
+    </nav>
+
+    <!-- Employee Selection Form -->
+    <div class="form-container" id="searchStep">
+        <h2 class="section-title">Select Employee to Update</h2>
+
+        <div id="searchMessage" class="form-message" hidden></div>
+
+        <form id="searchForm" novalidate>
+            <div class="form-group">
+                <label for="username" class="form-label required">Username</label>
+                <input type="text" id="username" name="username" class="form-control"
+                       placeholder="Enter employee username" required>
+            </div>
+            <div class="form-buttons">
+                <button type="submit" class="btn-luxury">
+                    <i class="fas fa-search me-2"></i>Find Employee
+                </button>
+                <a href="./systemadmi.html" class="btn-luxury-outline">
+                    <i class="fas fa-arrow-left me-2"></i>Back to Dashboard
+                </a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Update Employee Form -->
+    <div class="form-container" id="updateStep" hidden>
+        <h2 class="section-title" id="updateTitle">Update Employee</h2>
+
+        <div id="formMessage" class="form-message" hidden></div>
+
+        <!-- Employee Information Summary -->
+        <div class="room-info-card">
+            <h4 class="info-title"><i class="fas fa-info-circle"></i>Current Employee Information</h4>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Role</div>
+                    <div class="info-value" id="infoRole">—</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Email</div>
+                    <div class="info-value" id="infoEmail">—</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Phone</div>
+                    <div class="info-value" id="infoPhone">—</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Member Since</div>
+                    <div class="info-value" id="infoCreated">—</div>
+                </div>
+            </div>
+        </div>
+
+        <form id="updateForm" novalidate>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="role" class="form-label required"><i class="fas fa-user-tag me-2"></i>Role</label>
+                    <select id="role" name="role" class="form-control" required>
+                        <option value="receptionist">Receptionist</option>
+                        <option value="manager">Manager</option>
+                        <option value="system_admin">System Administrator</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="full_name" class="form-label"><i class="fas fa-id-card me-2"></i>Full Name</label>
+                    <input type="text" id="full_name" name="full_name" class="form-control" placeholder="Enter full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label"><i class="fas fa-envelope me-2"></i>Email Address</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter email address">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone" class="form-label"><i class="fas fa-phone me-2"></i>Phone Number</label>
+                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter phone number">
+                </div>
+            </div>
+
+            <!-- Password Update Section -->
+            <div class="password-section">
+                <h4 class="section-heading"><i class="fas fa-key me-2"></i>Password Update (Optional)</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="password" class="form-label">New Password</label>
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Leave blank to keep current password">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm_password" class="form-label">Confirm New Password</label>
+                        <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="Confirm new password">
+                    </div>
+                </div>
+                <p class="password-note">Note: Only fill these fields if you want to change the employee's password.</p>
+            </div>
+
+            <div class="form-buttons">
+                <button type="submit" class="btn-luxury">
+                    <i class="fas fa-save me-2"></i>Update Employee
+                </button>
+                <button type="button" class="btn-luxury-outline" id="selectDifferentBtn">
+                    <i class="fas fa-search me-2"></i>Select Different Employee
+                </button>
+                <a href="./systemadmi.html" class="btn-luxury-outline">
+                    <i class="fas fa-arrow-left me-2"></i>Back to Dashboard
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="luxury-footer">
+    <div class="footer-content">
+        <div class="social-links">
+            <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <div class="footer-contact">
+            <div class="contact-info">
+                <div class="contact-item"><i class="fas fa-phone contact-icon"></i><span>+251 123 456 789</span></div>
+                <div class="contact-item"><i class="fas fa-envelope contact-icon"></i><span>info@harowonchihotel.com</span></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt contact-icon"></i><span>Woliso, Ethiopia</span></div>
+            </div>
+        </div>
+
+        <nav class="footer-nav">
+            <div class="footer-nav-item"><a href="./home.html" class="footer-nav-link">Home</a></div>
+            <div class="footer-nav-item"><a href="./about.html" class="footer-nav-link">About our Hotel</a></div>
+            <div class="footer-nav-item"><a href="../pages/photogallery.html" class="footer-nav-link">Photogallery</a></div>
+            <div class="footer-nav-item"><a href="../pages/testimonials.html" class="footer-nav-link">Testimonials</a></div>
+            <div class="footer-nav-item"><a href="../pages/Locations.html" class="footer-nav-link">Locations</a></div>
+            <div class="footer-nav-item"><a href="../pages/contact_us.html" class="footer-nav-link">Contacts</a></div>
+        </nav>
+
+        <div class="footer-copyright">
+            <div class="footer-divider"></div>
+            <p class="copyright-text">Haro Wonchi Hotel, Woliso, Ethiopia</p>
+            <p class="copyright-year">&copy; <span id="year"></span> - Luxury Redefined</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../jav.js"></script>
+<script>
+    // ==========================================================
+    // Update Employee — frontend-only simulation. A sample staff
+    // list stands in for the accounts table lookup/update, mirroring
+    // the PHP version's find-by-username -> edit -> save flow,
+    // including the optional password change with confirmation
+    // matching.
+    // ==========================================================
+    document.addEventListener('DOMContentLoaded', function () {
+        var employees = [
+            { username: 'jdoe', full_name: 'John Doe', role: 'manager', email: 'jdoe@harowonchihotel.com', phone: '+251 911 222 333', created_at: '2024-02-10' },
+            { username: 'sadmin', full_name: 'Selam Tesfaye', role: 'system_admin', email: 'sadmin@harowonchihotel.com', phone: '+251 911 444 555', created_at: '2024-03-01' },
+            { username: 'akebede', full_name: 'Abebe Kebede', role: 'receptionist', email: 'akebede@harowonchihotel.com', phone: '+251 911 666 777', created_at: '2024-04-15' },
+            { username: 'malemu', full_name: 'Marta Alemu', role: 'receptionist', email: 'malemu@harowonchihotel.com', phone: '+251 911 888 999', created_at: '2024-05-22' },
+            { username: 'dgirma', full_name: 'Dawit Girma', role: 'receptionist', email: 'dgirma@harowonchihotel.com', phone: '', created_at: '2024-06-10' },
+            { username: 'hbekele', full_name: 'Hana Bekele', role: 'casher', email: 'hbekele@harowonchihotel.com', phone: '+251 922 111 222', created_at: '2024-07-05' },
+            { username: 'ytadesse', full_name: 'Yonas Tadesse', role: 'casher', email: 'ytadesse@harowonchihotel.com', phone: '', created_at: '2024-08-18' }
+        ];
+
+        var searchStep = document.getElementById('searchStep');
+        var updateStep = document.getElementById('updateStep');
+        var searchForm = document.getElementById('searchForm');
+        var updateForm = document.getElementById('updateForm');
+        var searchMessage = document.getElementById('searchMessage');
+        var formMessage = document.getElementById('formMessage');
+        var currentEmployee = null;
+
+        function showMessage(el, type, text) {
+            el.textContent = text;
+            el.className = 'form-message ' + type;
+            el.hidden = false;
+        }
+
+        function findEmployee(username) {
+            for (var i = 0; i < employees.length; i++) {
+                if (employees[i].username.toLowerCase() === username.toLowerCase()) return employees[i];
+            }
+            return null;
+        }
+
+        function formatDate(dateStr) {
+            var d = new Date(dateStr + 'T00:00:00');
+            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            return months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+        }
+
+        function loadIntoForm(emp) {
+            currentEmployee = emp;
+            document.getElementById('updateTitle').textContent = 'Update Employee: ' + emp.username;
+
+            document.getElementById('infoRole').textContent = emp.role.replace('_', ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+            document.getElementById('infoEmail').textContent = emp.email || 'Not set';
+            document.getElementById('infoPhone').textContent = emp.phone || 'Not set';
+            document.getElementById('infoCreated').textContent = formatDate(emp.created_at);
+
+            document.getElementById('role').value = emp.role;
+            document.getElementById('full_name').value = emp.full_name || '';
+            document.getElementById('email').value = emp.email || '';
+            document.getElementById('phone').value = emp.phone || '';
+            document.getElementById('password').value = '';
+            document.getElementById('confirm_password').value = '';
+
+            formMessage.hidden = true;
+            searchStep.hidden = true;
+            updateStep.hidden = false;
+        }
+
+        searchForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            searchMessage.hidden = true;
+            var username = document.getElementById('username').value.trim();
+            var emp = findEmployee(username);
+
+            if (!emp) {
+                showMessage(searchMessage, 'error', 'Employee not found!');
+                return;
+            }
+            loadIntoForm(emp);
+        });
+
+        document.getElementById('selectDifferentBtn').addEventListener('click', function () {
+            updateStep.hidden = true;
+            searchStep.hidden = false;
+            searchForm.reset();
+            searchMessage.hidden = true;
+            currentEmployee = null;
+        });
+
+        updateForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!currentEmployee) return;
+
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm_password').value;
+
+            if (password && password !== confirmPassword) {
+                showMessage(formMessage, 'error', 'Passwords do not match!');
+                return;
+            }
+
+            currentEmployee.role = document.getElementById('role').value;
+            currentEmployee.full_name = document.getElementById('full_name').value.trim();
+            currentEmployee.email = document.getElementById('email').value.trim();
+            currentEmployee.phone = document.getElementById('phone').value.trim();
+
+            document.getElementById('infoRole').textContent = currentEmployee.role.replace('_', ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+            document.getElementById('infoEmail').textContent = currentEmployee.email || 'Not set';
+            document.getElementById('infoPhone').textContent = currentEmployee.phone || 'Not set';
+
+            showMessage(formMessage, 'success', "Employee '" + currentEmployee.username + "' updated successfully!");
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Update Room | Haro Wonchi Hotel</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Luxury Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Icons (not Bootstrap) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Site stylesheet -->
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="luxury-navbar">
+    <div class="container nav-inner">
+        <a class="navbar-brand-luxury" href="./home.html">
+            <div class="logo-container">
+                <img src="assets/images/SPACE.JPG" width="50" height="65" alt="Haro Wonchi Icon" class="logo-img">
+                <div class="logo-text">
+                    <h1 class="hotel-name">Haro Wonchi</h1>
+                    <p class="hotel-tagline">Come and feel like home!</p>
+                </div>
+            </div>
+        </a>
+
+        <button class="navbar-toggler" id="navToggle" type="button" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="navbar-collapse" id="navbarNav">
+            <ul class="luxury-nav">
+                <li><a class="nav-link" href="./home.html">Home</a></li>
+                <li><a class="nav-link" href="./about.html">About</a></li>
+                <li><a class="nav-link" href="../pages/photogallery.html">Gallery</a></li>
+                <li><a class="nav-link" href="../pages/testimonials.html">Testimonials</a></li>
+                <li><a class="nav-link" href="../pages/Locations.html">Locations</a></li>
+                <li><a class="nav-link" href="../pages/contact_us.html">Contact</a></li>
+            </ul>
+            <div class="user-section">
+                <p class="welcome-text">Welcome, <span class="user-name">admin</span> <span class="user-role">Admin</span></p>
+                <a href="./home.html?logged=out" class="auth-btn" onclick="return confirm('Are you sure you want to logout?');">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="admin-hero">
+    <div class="admin-hero-content">
+        <h1>Update Room</h1>
+        <p>Modify Room Information and Pricing</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="breadcrumb">
+        <ol class="breadcrumb-list">
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./systemadmi.html">System Admin</a></li>
+            <li class="active">Update Room</li>
+        </ol>
+    </nav>
+
+    <!-- Room Selection Form -->
+    <div class="form-container" id="searchStep">
+        <h2 class="section-title">Select Room to Update</h2>
+
+        <div id="searchMessage" class="form-message" hidden></div>
+
+        <form id="searchForm" novalidate>
+            <div class="form-group">
+                <label for="room_no" class="form-label required">Room Number</label>
+                <input type="number" id="room_no" name="room_no" class="form-control"
+                       placeholder="Enter room number (e.g., 101)" min="1" max="999" required>
+            </div>
+            <div class="form-buttons">
+                <button type="submit" class="btn-luxury">
+                    <i class="fas fa-search me-2"></i>Find Room
+                </button>
+                <a href="./systemadmi.html" class="btn-luxury-outline">
+                    <i class="fas fa-arrow-left me-2"></i>Back to Dashboard
+                </a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Update Room Form -->
+    <div class="form-container" id="updateStep" hidden>
+        <h2 class="section-title" id="updateTitle">Update Room</h2>
+
+        <div id="formMessage" class="form-message" hidden></div>
+
+        <!-- Room Information Summary -->
+        <div class="room-info-card">
+            <h4 class="info-title"><i class="fas fa-info-circle"></i>Current Room Information</h4>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Room Type</div>
+                    <div class="info-value" id="infoRoomType">—</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Floor</div>
+                    <div class="info-value" id="infoRoomFloor">—</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Status</div>
+                    <div class="info-value" id="infoRoomStatus">—</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Max Guests</div>
+                    <div class="info-value" id="infoRoomGuests">—</div>
+                </div>
+            </div>
+        </div>
+
+        <form id="updateForm" novalidate>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="room_type" class="form-label required">Room Type</label>
+                    <select id="room_type" name="room_type" class="form-control" required>
+                        <option value="single">Single</option>
+                        <option value="twin">Twin</option>
+                        <option value="family">Family</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="price" class="form-label required">Price (ETB)</label>
+                    <input type="number" id="price" name="price" class="form-control"
+                           placeholder="e.g., 350" min="0" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="discount" class="form-label">Discount Price (ETB)</label>
+                    <input type="number" id="discount" name="discount" class="form-control"
+                           placeholder="e.g., 300" min="0" step="0.01">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Auto-Assigned Floor</label>
+                    <div class="floor-display" id="floorDisplay">Floor 1 (Single Floor)</div>
+                    <div class="floor-info">
+                        <div class="floor-mapping">
+                            Floor Mapping: Single &rarr; Floor 1 | Twin &rarr; Floor 2 | Family &rarr; Floor 3
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="max_guest" class="form-label">Maximum Guests</label>
+                    <input type="number" id="max_guest" name="max_guest" class="form-control"
+                           placeholder="e.g., 2" min="1" max="10">
+                </div>
+            </div>
+
+            <div class="form-group form-group-full">
+                <label for="detail" class="form-label">Room Details &amp; Amenities</label>
+                <textarea id="detail" name="detail" class="form-control"
+                          placeholder="Describe the room features, amenities, view, etc..."></textarea>
+            </div>
+
+            <div class="form-buttons">
+                <button type="submit" name="update_room" class="btn-luxury">
+                    <i class="fas fa-save me-2"></i>Update Room
+                </button>
+                <button type="button" class="btn-luxury-outline" id="selectDifferentBtn">
+                    <i class="fas fa-search me-2"></i>Select Different Room
+                </button>
+                <a href="./systemadmi.html" class="btn-luxury-outline">
+                    <i class="fas fa-arrow-left me-2"></i>Back to Dashboard
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="luxury-footer">
+    <div class="footer-content">
+        <div class="social-links">
+            <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <div class="footer-contact">
+            <div class="contact-info">
+                <div class="contact-item"><i class="fas fa-phone contact-icon"></i><span>+251 123 456 789</span></div>
+                <div class="contact-item"><i class="fas fa-envelope contact-icon"></i><span>info@harowonchihotel.com</span></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt contact-icon"></i><span>Woliso, Ethiopia</span></div>
+            </div>
+        </div>
+
+        <nav class="footer-nav">
+            <div class="footer-nav-item"><a href="./home.html" class="footer-nav-link">Home</a></div>
+            <div class="footer-nav-item"><a href="./about.html" class="footer-nav-link">About our Hotel</a></div>
+            <div class="footer-nav-item"><a href="../pages/photogallery.html" class="footer-nav-link">Photogallery</a></div>
+            <div class="footer-nav-item"><a href="../pages/testimonials.html" class="footer-nav-link">Testimonials</a></div>
+            <div class="footer-nav-item"><a href="../pages/Locations.html" class="footer-nav-link">Locations</a></div>
+            <div class="footer-nav-item"><a href="../pages/contact_us.html" class="footer-nav-link">Contacts</a></div>
+        </nav>
+
+        <div class="footer-copyright">
+            <div class="footer-divider"></div>
+            <p class="copyright-text">Haro Wonchi Hotel, Woliso, Ethiopia</p>
+            <p class="copyright-year">&copy; <span id="year"></span> - Luxury Redefined</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../jav.js"></script>
+<script>
+    // ==========================================================
+    // Update Room — frontend-only simulation. A sample room list
+    // stands in for the database lookup/update. Selecting a room
+    // type live-updates the auto-assigned floor, matching the
+    // PHP version's floor-mapping rule (Single -> 1, Twin -> 2,
+    // Family -> 3). "Update" applies changes to the in-memory
+    // room and refreshes the summary card.
+    // ==========================================================
+    document.addEventListener('DOMContentLoaded', function () {
+        var rooms = [
+            { room_no: 101, room_type: 'single', price: 1200, floor_no: 1, max_guest: 1, discount: 0, status: 'free', detail: 'Cozy single room with WiFi, private bathroom and city view.' },
+            { room_no: 102, room_type: 'single', price: 1200, floor_no: 1, max_guest: 1, discount: 1000, status: 'occupied', detail: 'Compact single room, WiFi and bathroom included.' },
+            { room_no: 201, room_type: 'twin', price: 2100, floor_no: 2, max_guest: 2, discount: 0, status: 'free', detail: 'Twin room with two beds, WiFi, bathroom and terrace.' },
+            { room_no: 202, room_type: 'twin', price: 2100, floor_no: 2, max_guest: 2, discount: 1800, status: 'free', detail: 'Twin room, lake view, WiFi and DSTV.' },
+            { room_no: 301, room_type: 'family', price: 3400, floor_no: 3, max_guest: 4, discount: 0, status: 'free', detail: 'Spacious family suite with lake view, terrace, WiFi, DSTV and bathroom.' },
+            { room_no: 302, room_type: 'family', price: 3600, floor_no: 3, max_guest: 4, discount: 3100, status: 'occupied', detail: 'Family suite with WiFi, bathroom and DSTV.' }
+        ];
+
+        var floorMap = { single: { no: 1, label: 'Floor 1 (Single Floor)' }, twin: { no: 2, label: 'Floor 2 (Twin Floor)' }, family: { no: 3, label: 'Floor 3 (Family Floor)' } };
+
+        var searchStep = document.getElementById('searchStep');
+        var updateStep = document.getElementById('updateStep');
+        var searchForm = document.getElementById('searchForm');
+        var updateForm = document.getElementById('updateForm');
+        var searchMessage = document.getElementById('searchMessage');
+        var formMessage = document.getElementById('formMessage');
+        var roomTypeSelect = document.getElementById('room_type');
+        var floorDisplay = document.getElementById('floorDisplay');
+        var currentRoom = null;
+
+        function capitalize(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+
+        function showSearchMessage(type, text) {
+            searchMessage.textContent = text;
+            searchMessage.className = 'form-message ' + type;
+            searchMessage.hidden = false;
+        }
+
+        function showFormMessage(type, text) {
+            formMessage.textContent = text;
+            formMessage.className = 'form-message ' + type;
+            formMessage.hidden = false;
+        }
+
+        function findRoom(roomNo) {
+            for (var i = 0; i < rooms.length; i++) {
+                if (rooms[i].room_no === roomNo) return rooms[i];
+            }
+            return null;
+        }
+
+        function updateFloorDisplay() {
+            var mapping = floorMap[roomTypeSelect.value] || floorMap.single;
+            floorDisplay.textContent = mapping.label;
+        }
+
+        function loadRoomIntoForm(room) {
+            currentRoom = room;
+            document.getElementById('updateTitle').textContent = 'Update Room ' + room.room_no;
+
+            document.getElementById('infoRoomType').textContent = capitalize(room.room_type);
+            document.getElementById('infoRoomFloor').textContent = room.floor_no;
+            var statusEl = document.getElementById('infoRoomStatus');
+            statusEl.textContent = capitalize(room.status);
+            statusEl.style.color = room.status === 'free' ? 'var(--success)' : 'var(--error)';
+            document.getElementById('infoRoomGuests').textContent = room.max_guest || '—';
+
+            roomTypeSelect.value = room.room_type;
+            document.getElementById('price').value = room.price;
+            document.getElementById('discount').value = room.discount || '';
+            document.getElementById('max_guest').value = room.max_guest || '';
+            document.getElementById('detail').value = room.detail || '';
+            updateFloorDisplay();
+
+            formMessage.hidden = true;
+            searchStep.hidden = true;
+            updateStep.hidden = false;
+        }
+
+        roomTypeSelect.addEventListener('change', updateFloorDisplay);
+
+        searchForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            searchMessage.hidden = true;
+            var roomNo = parseInt(document.getElementById('room_no').value, 10);
+            var room = findRoom(roomNo);
+
+            if (!room) {
+                showSearchMessage('error', 'Room not found! Please check the room number and try again.');
+                return;
+            }
+            loadRoomIntoForm(room);
+        });
+
+        document.getElementById('selectDifferentBtn').addEventListener('click', function () {
+            updateStep.hidden = true;
+            searchStep.hidden = false;
+            searchForm.reset();
+            searchMessage.hidden = true;
+        });
+
+        updateForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!currentRoom) return;
+
+            var roomType = roomTypeSelect.value;
+            var price = parseFloat(document.getElementById('price').value);
+
+            if (!roomType || isNaN(price)) {
+                showFormMessage('error', 'Please fill in all required fields!');
+                return;
+            }
+
+            currentRoom.room_type = roomType;
+            currentRoom.price = price;
+            currentRoom.floor_no = floorMap[roomType].no;
+            currentRoom.max_guest = parseInt(document.getElementById('max_guest').value, 10) || currentRoom.max_guest;
+            currentRoom.detail = document.getElementById('detail').value.trim();
+            var discountVal = document.getElementById('discount').value;
+            currentRoom.discount = discountVal ? parseFloat(discountVal) : 0;
+
+            document.getElementById('infoRoomType').textContent = capitalize(currentRoom.room_type);
+            document.getElementById('infoRoomFloor').textContent = currentRoom.floor_no;
+            document.getElementById('infoRoomGuests').textContent = currentRoom.max_guest || '—';
+
+            showFormMessage('success', 'Room ' + currentRoom.room_no + ' updated successfully!');
+        });
+    });
+</script>
+</body>
+</html>

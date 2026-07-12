@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Payment Successful | Haro Wonchi Hotel</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Luxury Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Icons (not Bootstrap) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Site stylesheet -->
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="luxury-navbar">
+    <div class="container nav-inner">
+        <a class="navbar-brand-luxury" href="./home.html">
+            <div class="logo-container">
+                <img src="assets/images/SPACE.JPG" width="50" height="65" alt="Haro Wonchi Icon" class="logo-img">
+                <div class="logo-text">
+                    <h1 class="hotel-name">Haro Wonchi</h1>
+                    <p class="hotel-tagline">Come and feel like home!</p>
+                </div>
+            </div>
+        </a>
+
+        <button class="navbar-toggler" id="navToggle" type="button" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="navbar-collapse" id="navbarNav">
+            <ul class="luxury-nav">
+                <li><a class="nav-link" href="./home.html">Home</a></li>
+                <li><a class="nav-link" href="./about.html">About</a></li>
+                <li><a class="nav-link" href="../pages/photogallery.html">Gallery</a></li>
+                <li><a class="nav-link" href="../pages/testimonials.html">Testimonials</a></li>
+                <li><a class="nav-link" href="../pages/Locations.html">Locations</a></li>
+                <li><a class="nav-link" href="../pages/contact_us.html">Contact</a></li>
+            </ul>
+            <div class="user-section">
+                <a href="login.html" class="auth-btn"><i class="fas fa-sign-in-alt"></i> Login</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="payment-hero">
+    <div class="payment-hero-content">
+        <h1 id="pageHeroTitle">Booking Confirmation</h1>
+        <p id="pageHeroSubtitle">Thank You For Choosing Haro Wonchi Hotel</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="breadcrumb">
+        <ol class="breadcrumb-list">
+            <li><a href="./home.html">Home</a></li>
+            <li class="active">Payment Confirmation</li>
+        </ol>
+    </nav>
+
+    <!-- Payment Result Card -->
+    <div class="payment-card">
+
+        <div class="payment-icon confirmed" id="paymentIcon">
+            <i class="fas fa-check-circle" id="paymentIconGlyph"></i>
+        </div>
+
+        <h2 class="payment-title" id="paymentTitle">Payment Successful!</h2>
+        <p class="payment-subtitle" id="paymentSubtitle">
+            Your reservation has been confirmed and payment processed successfully.
+        </p>
+
+        <span class="status-badge status-confirmed" id="statusBadge">CONFIRMED</span>
+
+        <div class="payment-details">
+            <div class="payment-details-row">
+                <span class="payment-details-label">Reservation ID</span>
+                <span class="payment-details-value" id="resId">#HW28941C</span>
+            </div>
+            <div class="payment-details-row">
+                <span class="payment-details-label">Room Number</span>
+                <span class="payment-details-value" id="resRoom">204</span>
+            </div>
+            <div class="payment-details-row">
+                <span class="payment-details-label">Guest Name</span>
+                <span class="payment-details-value" id="resName">Abebe Kebede</span>
+            </div>
+        </div>
+
+        <div class="payment-actions">
+            <a href="./home.html" class="btn-luxury">
+                <i class="fas fa-home me-2"></i> Return to Home
+            </a>
+            <a href="#" class="btn-luxury-outline" id="printLink">
+                <i class="fas fa-print me-2"></i> Print Reservation
+            </a>
+        </div>
+
+        <div class="payment-support">
+            Need help? Contact us at:<br>
+            <i class="fas fa-phone"></i> +251 123 456 789<br>
+            <i class="fas fa-envelope"></i> info@harowonchihotel.com
+        </div>
+    </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="luxury-footer">
+    <div class="footer-content">
+        <div class="social-links">
+            <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <div class="footer-contact">
+            <div class="contact-info">
+                <div class="contact-item"><i class="fas fa-phone contact-icon"></i><span>+251 123 456 789</span></div>
+                <div class="contact-item"><i class="fas fa-envelope contact-icon"></i><span>info@harowonchihotel.com</span></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt contact-icon"></i><span>Woliso, Ethiopia</span></div>
+            </div>
+        </div>
+
+        <nav class="footer-nav">
+            <div class="footer-nav-item"><a href="./home.html" class="footer-nav-link">Home</a></div>
+            <div class="footer-nav-item"><a href="./about.html" class="footer-nav-link">About our Hotel</a></div>
+            <div class="footer-nav-item"><a href="../pages/photogallery.html" class="footer-nav-link">Photogallery</a></div>
+            <div class="footer-nav-item"><a href="../pages/testimonials.html" class="footer-nav-link">Testimonials</a></div>
+            <div class="footer-nav-item"><a href="../pages/Locations.html" class="footer-nav-link">Locations</a></div>
+            <div class="footer-nav-item"><a href="../pages/contact_us.html" class="footer-nav-link">Contacts</a></div>
+        </nav>
+
+        <div class="footer-copyright">
+            <div class="footer-divider"></div>
+            <p class="copyright-text">Haro Wonchi Hotel, Woliso, Ethiopia</p>
+            <p class="copyright-year">&copy; <span id="year"></span> - Luxury Redefined</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../jav.js"></script>
+<script>
+    // ==========================================================
+    // Payment Success page — reads reservation details passed via
+    // URL query string (?res_id=...&room=...&name=...&status=...)
+    // so the same static page can reflect a confirmed or pending
+    // state without a backend. Falls back to sample data when no
+    // query string is present.
+    // ==========================================================
+    document.addEventListener('DOMContentLoaded', function () {
+        var params = new URLSearchParams(window.location.search);
+
+        var resId = params.get('res_id') || params.get('tx_ref') || 'HW28941C';
+        var room = params.get('room') || '204';
+        var name = params.get('name') || 'Abebe Kebede';
+        var status = (params.get('status') || 'confirmed').toLowerCase();
+        var isConfirmed = status !== 'pending';
+
+        document.getElementById('resId').textContent = '#' + resId;
+        document.getElementById('resRoom').textContent = room;
+        document.getElementById('resName').textContent = name;
+        document.getElementById('printLink').href = 'reservation_confirmation.html?id=' + encodeURIComponent(resId);
+
+        var icon = document.getElementById('paymentIcon');
+        var iconGlyph = document.getElementById('paymentIconGlyph');
+        var title = document.getElementById('paymentTitle');
+        var subtitle = document.getElementById('paymentSubtitle');
+        var badge = document.getElementById('statusBadge');
+        var heroTitle = document.getElementById('pageHeroTitle');
+        var heroSubtitle = document.getElementById('pageHeroSubtitle');
+
+        if (isConfirmed) {
+            icon.classList.remove('pending');
+            icon.classList.add('confirmed');
+            iconGlyph.className = 'fas fa-check-circle';
+            title.textContent = 'Payment Successful!';
+            subtitle.textContent = 'Your reservation has been confirmed and payment processed successfully.';
+            badge.textContent = 'CONFIRMED';
+            badge.className = 'status-badge status-confirmed';
+            document.title = 'Payment Successful - Haro Wonchi Hotel';
+            heroTitle.textContent = 'Booking Confirmation';
+            heroSubtitle.textContent = 'Thank You For Choosing Haro Wonchi Hotel';
+        } else {
+            icon.classList.remove('confirmed');
+            icon.classList.add('pending');
+            iconGlyph.className = 'fas fa-clock';
+            title.textContent = 'Payment Processing';
+            subtitle.textContent = 'Your payment is being processed. This may take a few moments.';
+            badge.textContent = 'PROCESSING';
+            badge.className = 'status-badge status-pending';
+            document.title = 'Payment Processing - Haro Wonchi Hotel';
+            heroTitle.textContent = 'Almost There';
+            heroSubtitle.textContent = 'We\'re Confirming Your Payment';
+        }
+    });
+</script>
+</body>
+</html>

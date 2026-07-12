@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Terminate Employee | Haro Wonchi Hotel</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Luxury Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Icons (not Bootstrap) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Site stylesheet -->
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="luxury-navbar">
+    <div class="container nav-inner">
+        <a class="navbar-brand-luxury" href="./home.html">
+            <div class="logo-container">
+                <img src="assets/images/SPACE.JPG" width="50" height="65" alt="Haro Wonchi Icon" class="logo-img">
+                <div class="logo-text">
+                    <h1 class="hotel-name">Haro Wonchi</h1>
+                    <p class="hotel-tagline">Come and feel like home!</p>
+                </div>
+            </div>
+        </a>
+
+        <button class="navbar-toggler" id="navToggle" type="button" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="navbar-collapse" id="navbarNav">
+            <ul class="luxury-nav">
+                <li><a class="nav-link" href="./home.html">Home</a></li>
+                <li><a class="nav-link" href="./about.html">About</a></li>
+                <li><a class="nav-link" href="../pages/photogallery.html">Gallery</a></li>
+                <li><a class="nav-link" href="../pages/testimonials.html">Testimonials</a></li>
+                <li><a class="nav-link" href="../pages/Locations.html">Locations</a></li>
+                <li><a class="nav-link" href="../pages/contact_us.html">Contact</a></li>
+            </ul>
+            <div class="user-section">
+                <p class="welcome-text">Welcome, <span class="user-name">admin</span> <span class="user-role">Admin</span></p>
+                <a href="./home.html?logged=out" class="auth-btn" onclick="return confirm('Are you sure you want to logout?');">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="admin-hero">
+    <div class="admin-hero-content">
+        <h1>Terminate Employee</h1>
+        <p>Manage Employee Separation Process</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="breadcrumb">
+        <ol class="breadcrumb-list">
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./systemadmi.html">System Admin</a></li>
+            <li class="active">Terminate Employee</li>
+        </ol>
+    </nav>
+
+    <!-- Employee Selection Form -->
+    <div class="form-container" id="searchStep">
+        <h2 class="section-title">Select Employee to Terminate</h2>
+
+        <div id="searchMessage" class="form-message" hidden></div>
+
+        <form id="searchForm" novalidate>
+            <div class="form-group">
+                <label for="username" class="form-label required">Username</label>
+                <input type="text" id="username" name="username" class="form-control"
+                       placeholder="Enter employee username to terminate" required>
+            </div>
+            <div class="form-buttons">
+                <button type="submit" class="btn-luxury">
+                    <i class="fas fa-search me-2"></i>Find Employee
+                </button>
+                <a href="./systemadmi.html" class="btn-luxury-outline">
+                    <i class="fas fa-arrow-left me-2"></i>Back to Dashboard
+                </a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Termination Confirmation -->
+    <div class="form-container" id="confirmStep" hidden>
+        <h2 class="section-title">Confirm Employee Termination</h2>
+
+        <!-- Employee Details -->
+        <div class="room-details-card">
+            <h3 class="details-title" id="confirmEmployeeTitle"><i class="fas fa-user"></i>Employee Details</h3>
+
+            <div class="details-grid">
+                <div class="detail-item">
+                    <div class="detail-label">Full Name</div>
+                    <div class="detail-value" id="confirmFullName">—</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Role</div>
+                    <div class="detail-value" id="confirmRole">—</div>
+                </div>
+            </div>
+
+            <div class="detail-description" id="confirmEmailWrap" hidden>
+                <div class="description-label">Contact Email</div>
+                <p class="description-text" id="confirmEmail"></p>
+            </div>
+        </div>
+
+        <!-- Termination Reason -->
+        <form id="terminationForm" novalidate>
+            <div class="form-group">
+                <label for="termination_reason" class="form-label required">Termination Reason</label>
+                <textarea id="termination_reason" name="termination_reason" class="form-control"
+                          placeholder="Please provide the reason for termination..." required></textarea>
+            </div>
+
+            <!-- Confirmation Warning -->
+            <div class="confirmation-box">
+                <div class="confirmation-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                <h3 class="confirmation-title">Warning: Critical Action</h3>
+                <p class="confirmation-text" id="confirmationText">
+                    You are about to terminate this employee from the system. This action will remove all
+                    system access immediately, delete the employee account permanently, and archive
+                    employment records. This action cannot be undone.
+                </p>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn-danger">
+                        <i class="fas fa-user-times me-2"></i>Confirm Termination
+                    </button>
+                    <button type="button" class="btn-luxury-outline" id="cancelTerminationBtn">
+                        <i class="fas fa-times me-2"></i>Cancel
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Not Found -->
+    <div class="form-container text-center" id="notFoundStep" hidden>
+        <div class="error-message">
+            <i class="fas fa-exclamation-triangle me-2"></i>
+            Employee not found! Please check the username and try again.
+        </div>
+        <a href="#" class="btn-luxury-outline mt-3" id="tryAgainBtn">
+            <i class="fas fa-search me-2"></i>Try Another Employee
+        </a>
+    </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="luxury-footer">
+    <div class="footer-content">
+        <div class="social-links">
+            <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <div class="footer-contact">
+            <div class="contact-info">
+                <div class="contact-item"><i class="fas fa-phone contact-icon"></i><span>+251 123 456 789</span></div>
+                <div class="contact-item"><i class="fas fa-envelope contact-icon"></i><span>info@harowonchihotel.com</span></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt contact-icon"></i><span>Woliso, Ethiopia</span></div>
+            </div>
+        </div>
+
+        <nav class="footer-nav">
+            <div class="footer-nav-item"><a href="./home.html" class="footer-nav-link">Home</a></div>
+            <div class="footer-nav-item"><a href="./about.html" class="footer-nav-link">About our Hotel</a></div>
+            <div class="footer-nav-item"><a href="../pages/photogallery.html" class="footer-nav-link">Photogallery</a></div>
+            <div class="footer-nav-item"><a href="../pages/testimonials.html" class="footer-nav-link">Testimonials</a></div>
+            <div class="footer-nav-item"><a href="../pages/Locations.html" class="footer-nav-link">Locations</a></div>
+            <div class="footer-nav-item"><a href="../pages/contact_us.html" class="footer-nav-link">Contacts</a></div>
+        </nav>
+
+        <div class="footer-copyright">
+            <div class="footer-divider"></div>
+            <p class="copyright-text">Haro Wonchi Hotel, Woliso, Ethiopia</p>
+            <p class="copyright-year">&copy; <span id="year"></span> - Luxury Redefined</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../jav.js"></script>
+<script>
+    // ==========================================================
+    // Terminate Employee — frontend-only simulation. A sample
+    // staff list stands in for the accounts table find/delete,
+    // mirroring the PHP version's find -> confirm -> delete flow.
+    // Confirming termination removes the employee from this
+    // in-memory list for the rest of the session.
+    // ==========================================================
+    document.addEventListener('DOMContentLoaded', function () {
+        var employees = [
+            { username: 'jdoe', full_name: 'John Doe', role: 'manager', email: 'jdoe@harowonchihotel.com' },
+            { username: 'sadmin', full_name: 'Selam Tesfaye', role: 'system_admin', email: 'sadmin@harowonchihotel.com' },
+            { username: 'akebede', full_name: 'Abebe Kebede', role: 'receptionist', email: 'akebede@harowonchihotel.com' },
+            { username: 'malemu', full_name: 'Marta Alemu', role: 'receptionist', email: 'malemu@harowonchihotel.com' },
+            { username: 'dgirma', full_name: 'Dawit Girma', role: 'receptionist', email: '' },
+            { username: 'hbekele', full_name: 'Hana Bekele', role: 'casher', email: 'hbekele@harowonchihotel.com' },
+            { username: 'ytadesse', full_name: 'Yonas Tadesse', role: 'casher', email: '' }
+        ];
+
+        var searchStep = document.getElementById('searchStep');
+        var confirmStep = document.getElementById('confirmStep');
+        var notFoundStep = document.getElementById('notFoundStep');
+        var searchForm = document.getElementById('searchForm');
+        var terminationForm = document.getElementById('terminationForm');
+        var searchMessage = document.getElementById('searchMessage');
+        var currentEmployee = null;
+
+        function showMessage(el, type, text) {
+            el.textContent = text;
+            el.className = 'form-message ' + type;
+            el.hidden = false;
+        }
+
+        function capitalize(str) {
+            return str.replace('_', ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+        }
+
+        function findEmployee(username) {
+            for (var i = 0; i < employees.length; i++) {
+                if (employees[i].username.toLowerCase() === username.toLowerCase()) return employees[i];
+            }
+            return null;
+        }
+
+        function goToStep(step) {
+            searchStep.hidden = step !== 'search';
+            confirmStep.hidden = step !== 'confirm';
+            notFoundStep.hidden = step !== 'notfound';
+        }
+
+        function showConfirmStep(emp) {
+            currentEmployee = emp;
+            document.getElementById('confirmEmployeeTitle').innerHTML = '<i class="fas fa-user"></i> Employee: ' + emp.username;
+            document.getElementById('confirmFullName').textContent = emp.full_name || 'Not specified';
+            document.getElementById('confirmRole').textContent = capitalize(emp.role);
+
+            var emailWrap = document.getElementById('confirmEmailWrap');
+            if (emp.email) {
+                emailWrap.hidden = false;
+                document.getElementById('confirmEmail').textContent = emp.email;
+            } else {
+                emailWrap.hidden = true;
+            }
+
+            document.getElementById('confirmationText').innerHTML =
+                'You are about to terminate <strong>' + emp.username + '</strong> from the system. This action will:<br>' +
+                '\u2022 Remove all system access immediately<br>' +
+                '\u2022 Delete the employee account permanently<br>' +
+                '\u2022 Archive employment records<br>' +
+                '<strong>This action cannot be undone.</strong>';
+
+            terminationForm.reset();
+            goToStep('confirm');
+        }
+
+        searchForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            searchMessage.hidden = true;
+            var username = document.getElementById('username').value.trim();
+            var emp = findEmployee(username);
+
+            if (!emp) {
+                goToStep('notfound');
+                return;
+            }
+            showConfirmStep(emp);
+        });
+
+        document.getElementById('tryAgainBtn').addEventListener('click', function (e) {
+            e.preventDefault();
+            searchForm.reset();
+            goToStep('search');
+        });
+
+        document.getElementById('cancelTerminationBtn').addEventListener('click', function () {
+            currentEmployee = null;
+            searchForm.reset();
+            goToStep('search');
+        });
+
+        terminationForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!currentEmployee) return;
+
+            var index = employees.indexOf(currentEmployee);
+            if (index !== -1) employees.splice(index, 1);
+
+            var username = currentEmployee.username;
+            currentEmployee = null;
+            searchForm.reset();
+            goToStep('search');
+            showMessage(searchMessage, 'success', "Employee '" + username + "' has been successfully terminated!");
+        });
+    });
+</script>
+</body>
+</html>

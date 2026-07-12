@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Reservation Confirmation | Haro Wonchi Hotel</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Luxury Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Icons (not Bootstrap) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Site stylesheet -->
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="luxury-navbar no-print">
+    <div class="container nav-inner">
+        <a class="navbar-brand-luxury" href="./home.html">
+            <div class="logo-container">
+                <img src="assets/images/SPACE.JPG" width="50" height="65" alt="Haro Wonchi Icon" class="logo-img">
+                <div class="logo-text">
+                    <h1 class="hotel-name">Haro Wonchi</h1>
+                    <p class="hotel-tagline">Come and feel like home!</p>
+                </div>
+            </div>
+        </a>
+
+        <button class="navbar-toggler" id="navToggle" type="button" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="navbar-collapse" id="navbarNav">
+            <ul class="luxury-nav">
+                <li><a class="nav-link" href="./home.html">Home</a></li>
+                <li><a class="nav-link" href="./about.html">About</a></li>
+                <li><a class="nav-link" href="../pages/photogallery.html">Gallery</a></li>
+                <li><a class="nav-link" href="../pages/testimonials.html">Testimonials</a></li>
+                <li><a class="nav-link" href="../pages/Locations.html">Locations</a></li>
+                <li><a class="nav-link" href="../pages/contact_us.html">Contact</a></li>
+            </ul>
+            <div class="user-section">
+                <a href="login.html" class="auth-btn"><i class="fas fa-sign-in-alt"></i> Login</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="payment-hero no-print">
+    <div class="payment-hero-content">
+        <h1>Reservation Confirmation</h1>
+        <p>Thank You For Choosing Haro Wonchi Hotel</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="breadcrumb no-print">
+        <ol class="breadcrumb-list">
+            <li><a href="./home.html">Home</a></li>
+            <li class="active">Reservation Confirmation</li>
+        </ol>
+    </nav>
+
+    <div class="form-container">
+
+        <!-- Reservation ID -->
+        <div class="reservation-id">
+            <div class="reservation-id-label">Your Reservation ID</div>
+            <div class="reservation-id-value" id="resId">--------</div>
+        </div>
+
+        <!-- Guest Information -->
+        <div class="room-info-card" style="margin-top: 24px;">
+            <h4 class="info-title"><i class="fas fa-user-circle"></i>Guest Information</h4>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Full Name</div>
+                    <div class="info-value" id="guestName">—</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Email</div>
+                    <div class="info-value" id="guestEmail">—</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Phone</div>
+                    <div class="info-value" id="guestPhone">—</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Location</div>
+                    <div class="info-value" id="guestLocation">—</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stay Details -->
+        <div class="room-info-card">
+            <h4 class="info-title"><i class="fas fa-calendar-alt"></i>Stay Details</h4>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Arrival Date</div>
+                    <div class="info-value" id="arrivalDate">—</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Departure Date</div>
+                    <div class="info-value" id="departureDate">—</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Duration</div>
+                    <div class="info-value" id="duration">—</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Room Assignment -->
+        <div class="room-info-card">
+            <h4 class="info-title"><i class="fas fa-door-open"></i>Room Assignment</h4>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Room Type</div>
+                    <div class="info-value" id="roomType">—</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Room Number</div>
+                    <div class="info-value" id="roomNumber">—</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Floor</div>
+                    <div class="info-value" id="floorNumber">—</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Price Breakdown -->
+        <div class="payment-details">
+            <div class="payment-details-row">
+                <span class="payment-details-label">Room Charges</span>
+                <span class="payment-details-value" id="roomCharge">ETB 0.00</span>
+            </div>
+            <div class="payment-details-row">
+                <span class="payment-details-label">Tax (15%)</span>
+                <span class="payment-details-value" id="taxAmount">ETB 0.00</span>
+            </div>
+            <div class="payment-details-row" style="font-family: var(--font-heading); color: var(--gold);">
+                <span class="payment-details-label">Total Amount</span>
+                <span class="payment-details-value" id="totalAmount">ETB 0.00</span>
+            </div>
+        </div>
+
+        <!-- Check-in Instructions -->
+        <div class="form-help">
+            <h4 class="help-title"><i class="fas fa-info-circle"></i>Check-in Information</h4>
+            <ul class="help-list">
+                <li>Please bring this confirmation and a valid ID when you check in</li>
+                <li>Check-in time: 2:00 PM | Check-out time: 12:00 PM</li>
+                <li>Early check-in and late check-out are subject to availability</li>
+                <li>Contact us in advance for any special requests</li>
+                <li>Free cancellation up to 24 hours before arrival</li>
+            </ul>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="payment-actions no-print">
+            <button onclick="window.print()" class="btn-luxury">
+                <i class="fas fa-print me-2"></i>Print Confirmation
+            </button>
+            <a href="./home.html" class="btn-luxury-outline">
+                <i class="fas fa-home me-2"></i>Back to Home
+            </a>
+            <a href="./cancel_reservation.html" class="btn-luxury-outline">
+                <i class="fas fa-times me-2"></i>Cancel Reservation
+            </a>
+        </div>
+
+        <div class="payment-support">
+            Need assistance?<br>
+            <i class="fas fa-phone"></i> +251 123 456 789<br>
+            <i class="fas fa-envelope"></i> info@harowonchihotel.com<br>
+            <i class="fas fa-map-marker-alt"></i> Woliso, Ethiopia
+        </div>
+    </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="luxury-footer no-print">
+    <div class="footer-content">
+        <div class="social-links">
+            <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <div class="footer-contact">
+            <div class="contact-info">
+                <div class="contact-item"><i class="fas fa-phone contact-icon"></i><span>+251 123 456 789</span></div>
+                <div class="contact-item"><i class="fas fa-envelope contact-icon"></i><span>info@harowonchihotel.com</span></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt contact-icon"></i><span>Woliso, Ethiopia</span></div>
+            </div>
+        </div>
+
+        <nav class="footer-nav">
+            <div class="footer-nav-item"><a href="./home.html" class="footer-nav-link">Home</a></div>
+            <div class="footer-nav-item"><a href="./about.html" class="footer-nav-link">About our Hotel</a></div>
+            <div class="footer-nav-item"><a href="../pages/photogallery.html" class="footer-nav-link">Photogallery</a></div>
+            <div class="footer-nav-item"><a href="../pages/testimonials.html" class="footer-nav-link">Testimonials</a></div>
+            <div class="footer-nav-item"><a href="../pages/Locations.html" class="footer-nav-link">Locations</a></div>
+            <div class="footer-nav-item"><a href="../pages/contact_us.html" class="footer-nav-link">Contacts</a></div>
+        </nav>
+
+        <div class="footer-copyright">
+            <div class="footer-divider"></div>
+            <p class="copyright-text">Haro Wonchi Hotel, Woliso, Ethiopia</p>
+            <p class="copyright-year">&copy; <span id="year"></span> - Luxury Redefined</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../jav.js"></script>
+<script>
+    // ==========================================================
+    // Reservation Confirmation — frontend-only simulation. No
+    // backend, so a sample reservation list stands in for the
+    // database lookup by ?id=. Falls back to a sample record when
+    // no ID is present, and computes the same tax/total math the
+    // PHP version did (15% tax on the base room price).
+    // ==========================================================
+    document.addEventListener('DOMContentLoaded', function () {
+        var reservations = [
+            {
+                res_id: 'HW28941C', first_name: 'Abebe', last_name: 'Kebede', email: 'abebe.kebede@example.com',
+                telephone: '+251 911 222 333', arr_date: '15.08.2026', dep_date: '18.08.2026',
+                room_type: 'twin', room_number: '201', floor_number: '2',
+                city: 'Addis Ababa', state: 'Addis Ababa', country: 'Ethiopia'
+            },
+            {
+                res_id: 'HW30217X', first_name: 'Marta', last_name: 'Alemu', email: 'marta.alemu@example.com',
+                telephone: '+251 922 333 444', arr_date: '20.08.2026', dep_date: '22.08.2026',
+                room_type: 'family', room_number: '301', floor_number: '3',
+                city: 'Woliso', state: 'Oromia', country: 'Ethiopia'
+            }
+        ];
+
+        var roomPrices = { single: 1200, twin: 2100, family: 3400, double: 2100 };
+
+        function capitalize(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+
+        function parseDate(str) {
+            var parts = str.split('.');
+            if (parts.length !== 3) return null;
+            return new Date(parts[2], parts[1] - 1, parts[0]);
+        }
+
+        function nightsBetween(arr, dep) {
+            var a = parseDate(arr);
+            var d = parseDate(dep);
+            if (!a || !d) return 1;
+            var diff = Math.round((d - a) / (1000 * 60 * 60 * 24));
+            return diff > 0 ? diff : 1;
+        }
+
+        var params = new URLSearchParams(window.location.search);
+        var resId = params.get('id') || params.get('res_id');
+        var reservation = null;
+
+        for (var i = 0; i < reservations.length; i++) {
+            if (reservations[i].res_id === resId) { reservation = reservations[i]; break; }
+        }
+        if (!reservation) reservation = reservations[0];
+
+        var nights = nightsBetween(reservation.arr_date, reservation.dep_date);
+        var basePrice = (roomPrices[reservation.room_type] || roomPrices.double) * nights;
+        var taxAmount = basePrice * 0.15;
+        var totalAmount = basePrice + taxAmount;
+
+        document.getElementById('resId').textContent = '#' + reservation.res_id;
+        document.getElementById('guestName').textContent = reservation.first_name + ' ' + reservation.last_name;
+        document.getElementById('guestEmail').textContent = reservation.email;
+        document.getElementById('guestPhone').textContent = reservation.telephone;
+        document.getElementById('guestLocation').textContent = reservation.city + ', ' + reservation.state + ', ' + reservation.country;
+
+        document.getElementById('arrivalDate').textContent = reservation.arr_date;
+        document.getElementById('departureDate').textContent = reservation.dep_date;
+        document.getElementById('duration').textContent = nights + ' night(s)';
+
+        document.getElementById('roomType').textContent = capitalize(reservation.room_type);
+        document.getElementById('roomNumber').textContent = reservation.room_number;
+        document.getElementById('floorNumber').textContent = reservation.floor_number;
+
+        document.getElementById('roomCharge').textContent = 'ETB ' + basePrice.toFixed(2);
+        document.getElementById('taxAmount').textContent = 'ETB ' + taxAmount.toFixed(2);
+        document.getElementById('totalAmount').textContent = 'ETB ' + totalAmount.toFixed(2);
+
+        document.title = 'Reservation #' + reservation.res_id + ' Confirmation - Haro Wonchi Hotel';
+    });
+</script>
+</body>
+</html>

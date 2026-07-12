@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Employee Overview | Haro Wonchi Hotel</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Luxury Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Icons (not Bootstrap) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Site stylesheet -->
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="luxury-navbar">
+    <div class="container nav-inner">
+        <a class="navbar-brand-luxury" href="./home.html">
+            <div class="logo-container">
+                <img src="assets/images/SPACE.JPG" width="50" height="65" alt="Haro Wonchi Icon" class="logo-img">
+                <div class="logo-text">
+                    <h1 class="hotel-name">Haro Wonchi</h1>
+                    <p class="hotel-tagline">Come and feel like home!</p>
+                </div>
+            </div>
+        </a>
+
+        <button class="navbar-toggler" id="navToggle" type="button" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="navbar-collapse" id="navbarNav">
+            <ul class="luxury-nav">
+                <li><a class="nav-link" href="./home.html">Home</a></li>
+                <li><a class="nav-link" href="./about.html">About</a></li>
+                <li><a class="nav-link" href="../pages/photogallery.html">Gallery</a></li>
+                <li><a class="nav-link" href="../pages/testimonials.html">Testimonials</a></li>
+                <li><a class="nav-link" href="../pages/Locations.html">Locations</a></li>
+                <li><a class="nav-link" href="../pages/contact_us.html">Contact</a></li>
+            </ul>
+            <div class="user-section">
+                <p class="welcome-text">Welcome, <span class="user-name">John Doe</span> <span class="user-role">Manager</span></p>
+                <a href="./home.html?logged=out" class="auth-btn" onclick="return confirm('Are you sure you want to logout?');">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="employees-hero">
+    <div class="employees-hero-content">
+        <h1>Employee Overview</h1>
+        <p>Manage Hotel Staff and Roles</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="breadcrumb">
+        <ol class="breadcrumb-list">
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./manager.html">Manager Dashboard</a></li>
+            <li class="active">Employee Overview</li>
+        </ol>
+    </nav>
+
+    <!-- Statistics -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number" id="statTotal">7</div>
+            <div class="stat-label">Total Employees</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="statManagers">1</div>
+            <div class="stat-label">Managers</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="statReceptionists">3</div>
+            <div class="stat-label">Receptionists</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="statOther">3</div>
+            <div class="stat-label">Other Staff</div>
+        </div>
+    </div>
+
+    <!-- Employees Table -->
+    <div class="employees-table">
+        <div class="table-header">
+            <h3><i class="fas fa-users me-2"></i>Hotel Staff Directory</h3>
+        </div>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Employee</th>
+                        <th>Contact Information</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Join Date</th>
+                    </tr>
+                </thead>
+                <tbody id="employeesTableBody">
+                    <!-- rows injected by script below -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Role Legend -->
+    <div class="role-legend">
+        <h4 class="role-legend-title"><i class="fas fa-info-circle me-2"></i>Role Descriptions</h4>
+        <div class="role-legend-grid">
+            <div class="role-legend-item">
+                <strong>Manager</strong>
+                <p>Oversees hotel operations and staff management</p>
+            </div>
+            <div class="role-legend-item">
+                <strong>Receptionist</strong>
+                <p>Handles guest check-ins, check-outs, and front desk operations</p>
+            </div>
+            <div class="role-legend-item">
+                <strong>System Admin</strong>
+                <p>Manages system configuration and technical operations</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Dashboard -->
+    <div class="back-to-dashboard">
+        <a href="./manager.html" class="btn-dashboard">
+            <i class="fas fa-arrow-left me-2"></i>Back to Dashboard
+        </a>
+    </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="luxury-footer">
+    <div class="footer-content">
+        <div class="social-links">
+            <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <div class="footer-contact">
+            <div class="contact-info">
+                <div class="contact-item"><i class="fas fa-phone contact-icon"></i><span>+251 123 456 789</span></div>
+                <div class="contact-item"><i class="fas fa-envelope contact-icon"></i><span>info@harowonchihotel.com</span></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt contact-icon"></i><span>Woliso, Ethiopia</span></div>
+            </div>
+        </div>
+
+        <nav class="footer-nav">
+            <div class="footer-nav-item"><a href="./home.html" class="footer-nav-link">Home</a></div>
+            <div class="footer-nav-item"><a href="./about.html" class="footer-nav-link">About our Hotel</a></div>
+            <div class="footer-nav-item"><a href="../pages/photogallery.html" class="footer-nav-link">Photogallery</a></div>
+            <div class="footer-nav-item"><a href="../pages/testimonials.html" class="footer-nav-link">Testimonials</a></div>
+            <div class="footer-nav-item"><a href="../pages/Locations.html" class="footer-nav-link">Locations</a></div>
+            <div class="footer-nav-item"><a href="../pages/contact_us.html" class="footer-nav-link">Contacts</a></div>
+        </nav>
+
+        <div class="footer-copyright">
+            <div class="footer-divider"></div>
+            <p class="copyright-text">Haro Wonchi Hotel, Woliso, Ethiopia</p>
+            <p class="copyright-year">&copy; <span id="year"></span> - Luxury Redefined</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../jav.js"></script>
+<script>
+    // ==========================================================
+    // Employee Overview — frontend-only simulation. A sample
+    // staff list stands in for the accounts table query, sorted
+    // the same way the PHP version did (manager, system_admin,
+    // receptionist, casher, then everyone else, by name).
+    // ==========================================================
+    document.addEventListener('DOMContentLoaded', function () {
+        var employees = [
+            { full_name: 'John Doe', username: 'jdoe', email: 'jdoe@harowonchihotel.com', phone: '+251 911 222 333', role: 'manager', status: 'online', created_at: '2024-02-10' },
+            { full_name: 'Selam Tesfaye', username: 'sadmin', email: 'sadmin@harowonchihotel.com', phone: '+251 911 444 555', role: 'system_admin', status: 'online', created_at: '2024-03-01' },
+            { full_name: 'Abebe Kebede', username: 'akebede', email: 'akebede@harowonchihotel.com', phone: '+251 911 666 777', role: 'receptionist', status: 'online', created_at: '2024-04-15' },
+            { full_name: 'Marta Alemu', username: 'malemu', email: 'malemu@harowonchihotel.com', phone: '+251 911 888 999', role: 'receptionist', status: 'offline', created_at: '2024-05-22' },
+            { full_name: 'Dawit Girma', username: 'dgirma', email: 'dgirma@harowonchihotel.com', phone: '', role: 'receptionist', status: 'offline', created_at: '2024-06-10' },
+            { full_name: 'Hana Bekele', username: 'hbekele', email: 'hbekele@harowonchihotel.com', phone: '+251 922 111 222', role: 'casher', status: 'online', created_at: '2024-07-05' },
+            { full_name: 'Yonas Tadesse', username: 'ytadesse', email: 'ytadesse@harowonchihotel.com', phone: '', role: 'casher', status: 'offline', created_at: '2024-08-18' }
+        ];
+
+        var roleOrder = { manager: 1, system_admin: 2, receptionist: 3, casher: 4 };
+        employees.sort(function (a, b) {
+            var orderA = roleOrder[a.role] || 5;
+            var orderB = roleOrder[b.role] || 5;
+            if (orderA !== orderB) return orderA - orderB;
+            return a.full_name.localeCompare(b.full_name);
+        });
+
+        var totalEmployees = employees.length;
+        var managers = employees.filter(function (e) { return e.role === 'manager'; }).length;
+        var receptionists = employees.filter(function (e) { return e.role === 'receptionist'; }).length;
+        var cashers = employees.filter(function (e) { return e.role === 'casher'; }).length;
+        var systemAdmins = employees.filter(function (e) { return e.role === 'system_admin'; }).length;
+
+        document.getElementById('statTotal').textContent = totalEmployees;
+        document.getElementById('statManagers').textContent = managers;
+        document.getElementById('statReceptionists').textContent = receptionists;
+        document.getElementById('statOther').textContent = cashers + systemAdmins;
+
+        function capitalize(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+
+        function formatDate(dateStr) {
+            var d = new Date(dateStr + 'T00:00:00');
+            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            return months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+        }
+
+        var tbody = document.getElementById('employeesTableBody');
+
+        if (employees.length === 0) {
+            var emptyRow = document.createElement('tr');
+            emptyRow.innerHTML = '<td colspan="5"><div class="no-employees"><i class="fas fa-user-slash fa-3x mb-3"></i><p>No employees found.</p></div></td>';
+            tbody.appendChild(emptyRow);
+        } else {
+            employees.forEach(function (employee) {
+                var isOnline = employee.status === 'online';
+                var statusClass = isOnline ? 'status-online' : 'status-offline';
+                var statusText = isOnline ? 'Online' : 'Offline';
+                var phoneHtml = employee.phone
+                    ? '<div class="phone"><i class="fas fa-phone me-1"></i>' + employee.phone + '</div>'
+                    : '';
+
+                var row = document.createElement('tr');
+                row.innerHTML =
+                    '<td><div class="employee-avatar">' +
+                        '<div class="avatar-circle">' + employee.full_name.charAt(0).toUpperCase() + '</div>' +
+                        '<div class="employee-info"><h5>' + employee.full_name + '</h5><p>@' + employee.username + '</p></div>' +
+                    '</div></td>' +
+                    '<td><div class="employee-contact"><div class="email"><i class="fas fa-envelope me-1"></i>' + employee.email + '</div>' + phoneHtml + '</div></td>' +
+                    '<td><span class="role-badge">' + capitalize(employee.role.replace('_', ' ')) + '</span></td>' +
+                    '<td><span class="status-badge ' + statusClass + '"><i class="fas fa-circle me-1" style="font-size:0.6rem;"></i>' + statusText + '</span></td>' +
+                    '<td>' + formatDate(employee.created_at) + '</td>';
+                tbody.appendChild(row);
+            });
+        }
+    });
+</script>
+</body>
+</html>
