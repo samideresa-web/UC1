@@ -580,7 +580,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 /* ---------------- Footer ---------------- */
 .luxury-footer {
     background: linear-gradient(rgba(20, 18, 15, 0.6), rgba(20, 18, 15, 0.6)),
-                url('../asset/TOP_BG.JPG') center/cover no-repeat;
+                url('../asset/footer_bg.jpg') center/cover no-repeat;
     
 
     color: #ddd;
@@ -1174,7 +1174,7 @@ ul { list-style: none; margin: 0; padding: 0; }
    ========================================================== */
 .home-hero {
     background: linear-gradient(rgba(20, 18, 15, 0.65), rgba(20, 18, 15, 0.65)),
-                url('../assets/images/bg-hero.jpg') center/cover no-repeat;
+                url('../asset/images/bg-hero.jpg') center/cover no-repeat;
     min-height: 70vh;
     display: flex;
     align-items: center;
@@ -1423,7 +1423,7 @@ ul { list-style: none; margin: 0; padding: 0; }
    ========================================================== */
 .dashboard-hero {
     background: linear-gradient(rgba(20, 18, 15, 0.65), rgba(20, 18, 15, 0.65)),
-                url('../asset/bg-hero.jpg') center/cover no-repeat;
+                url('../asset/p admin.avif') center/cover no-repeat;
     min-height: 32vh;
     display: flex;
     align-items: center;
@@ -2061,7 +2061,7 @@ ul { list-style: none; margin: 0; padding: 0; }
    ========================================================== */
 .forgot-hero {
     background: linear-gradient(rgba(20, 18, 15, 0.6), rgba(20, 18, 15, 0.6)),
-                url('../assets/images/bg-hero.jpg') center/cover no-repeat;
+                url('../asset/TOP_BG.JPG') center/cover no-repeat;
     padding: 90px 20px;
     text-align: center;
     color: #fff;
@@ -2147,7 +2147,7 @@ ul { list-style: none; margin: 0; padding: 0; }
    ========================================================== */
 .rooms-hero {
     background: linear-gradient(rgba(20, 18, 15, 0.6), rgba(20, 18, 15, 0.6)),
-                url('../assets/images/bg-hero.jpg') center/cover no-repeat;
+                url('../asset/IMAGE.JPG') center/cover no-repeat;
     padding: 90px 20px;
     text-align: center;
     color: #fff;
@@ -2388,7 +2388,7 @@ ul { list-style: none; margin: 0; padding: 0; }
    ========================================================== */
 .register-hero {
     background: linear-gradient(rgba(20, 18, 15, 0.6), rgba(20, 18, 15, 0.6)),
-                url('../assets/images/bg-hero.jpg') center/cover no-repeat;
+                url('../asset/receptionst.jpg') center/cover no-repeat;
     padding: 90px 20px;
     text-align: center;
     color: #fff;
@@ -2756,7 +2756,7 @@ ul { list-style: none; margin: 0; padding: 0; }
    ========================================================== */
 .employees-hero {
     background: linear-gradient(rgba(20, 18, 15, 0.6), rgba(20, 18, 15, 0.6)),
-                url('../assets/images/bg-hero.jpg') center/cover no-repeat;
+                url('../asset/p admin.avif') center/cover no-repeat;
     padding: 90px 20px;
     text-align: center;
     color: #fff;
@@ -2968,7 +2968,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 .status-rejected {
-    background: #fbeaea;
+    background: hsl(0, 68%, 95%);
     color: var(--error);
     border: 1px solid var(--error);
 }
